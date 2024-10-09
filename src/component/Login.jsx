@@ -8,6 +8,8 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   const [errors, setErrors] = useState({});
   const [isStrongPassword, setIsStrongPassword] = useState(false);
   const specialSymbolRegex = /[^a-zA-Z0-9]/g;
@@ -79,7 +81,7 @@ const Login = () => {
             </label>
             <input
               id="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className={`mt-1 block w-full px-3 py-2 border ${
@@ -87,9 +89,17 @@ const Login = () => {
               } rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
               placeholder="Enter your password"
             />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute top-[45%] right-[38%]  pr-3 flex items-center text-gray-500"
+              >
+                {showPassword ? "Hide" : "Show"}
+              </button>
             {errors.password && (
               <p className="text-red-500 text-sm mt-2">{errors.password}</p>
             )}
+
 
             {/* Strong Password Indicator */}
             {password && !errors.password && (
