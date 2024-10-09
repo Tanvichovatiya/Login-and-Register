@@ -2,14 +2,14 @@ import React from "react";
 
 import Login from "./component/Login";
 import SignIn from "./component/Signin";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import Home from "./component/home";
 
 
 const App = () => {
  return (
   <>
-  <BrowserRouter>
+  <HashRouter>
   
   <Routes>
     <Route path='/' element={<Login/>}></Route>
@@ -18,7 +18,7 @@ const App = () => {
 
 
   </Routes>
-  </BrowserRouter>
+  </HashRouter>
   </>
  )
 };
