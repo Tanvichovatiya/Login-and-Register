@@ -92,7 +92,7 @@ const Login = () => {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute top-[45%] right-[38%]  pr-3 flex items-center text-gray-500"
+                className="absolute top-[48%] right-[38%]  pr-3 flex items-center text-gray-500"
               >
                 {showPassword ? "Hide" : "Show"}
               </button>
